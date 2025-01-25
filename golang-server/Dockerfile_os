@@ -1,0 +1,38 @@
+# Use a minimal OS image like Debian or Ubuntu
+FROM debian:bullseye
+
+# Set environment variables for Go
+ENV GOLANG_VERSION=1.23.2
+ENV GOROOT=/usr/local/go
+ENV GOPATH=/go
+ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+# Install required packages
+RUN apt-get update && apt-get install -y \
+    curl \
+    tar \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and install Golang
+RUN curl -LO https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz \
+    && tar -C /usr/local -xzf go$GOLANG_VERSION.linux-amd64.tar.gz \
+    && rm go$GOLANG_VERSION.linux-amd64.tar.gz
+
+# Set up the working directory
+WORKDIR /app
+
+# Copy go.mod and source files
+COPY go.mod .
+COPY . .
+
+# Download Go dependencies
+RUN go mod tidy
+
+# Build the Go binary
+RUN go build -o /app/server .
+
+# Expose the port and set the entrypoint
+EXPOSE 8080
+ENTRYPOINT ["/app/server"]

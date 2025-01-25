@@ -1,0 +1,10 @@
+2025-01-25T19:04:59.896+0100	INFO	This is an advanced and improved TCP server Program with proper logging and read write capabilities
+2025-01-25T19:04:59.899+0100	INFO	Server is now listening on port 12002
+2025-01-25T19:07:48.312+0100	INFO	Server has been approached by a client
+2025-01-25T19:07:48.312+0100	INFO	Expecting bytes of data	{"length": 43}
+2025-01-25T19:07:48.312+0100	INFO	Received:	{"data": "Hello my friend,the server, from the client"}
+2025-01-25T19:07:48.312+0100	WARN	Client closed the connection
+2025-01-25T19:08:42.263+0100	INFO	Server has been approached by a client
+2025-01-25T19:08:42.263+0100	INFO	Expecting bytes of data	{"length": 43}
+2025-01-25T19:08:42.263+0100	INFO	Received:	{"data": "Hello my friend,the server, from the client"}
+2025-01-25T19:08:42.264+0100	WARN	Client closed the connection
