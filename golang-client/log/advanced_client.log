@@ -1,0 +1,6 @@
+2025-01-25T19:07:48.308+0100	INFO	This is an advanced TCP client program with proper error handling and logging
+2025-01-25T19:07:48.311+0100	INFO	Connection established with the server
+2025-01-25T19:07:48.312+0100	INFO	Server response:	{"response": "Message received"}
+2025-01-25T19:08:42.260+0100	INFO	This is an advanced TCP client program with proper error handling and logging
+2025-01-25T19:08:42.263+0100	INFO	Connection established with the server
+2025-01-25T19:08:42.263+0100	INFO	Server response:	{"response": "Message received"}
